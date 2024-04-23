@@ -1,6 +1,6 @@
 <!-- # react-polls -->
 
-# ![](logo.svg)
+<!-- # ![](logo.svg) -->
 
 <b>react-polls</b> is a set of multiple reusable and customizable poll types.
 
@@ -15,13 +15,13 @@
 ### NPM
 
 ```bash
-npm i --save react-polls
+npm i --save @gb335/react-polls
 ```
 
 ### Yarn
 
 ```bash
-yarn add react-polls
+yarn add @gb335/react-polls
 ```
 
 ## Usage
@@ -66,15 +66,16 @@ const App = () => {
 
 ## Component Props
 
-| Prop        |                  Type/Options                  | Required |         Default         | Description                                                                                                                                                                                                                                                    |
-| ----------- | :--------------------------------------------: | :------: | :---------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type        |             "multiple" or "binary"             |    ✔     |         binary          | Determines rendered poll type. Binary is recommended for yes-no questions where multiple is "one from many".                                                                                                                                                   |
-| question    |                     String                     |    ✖     |                         | Question visible on top of the poll. Invisible if not set.                                                                                                                                                                                                     |
-| results     | Array of objects with keys "text" and "votes". |    ✔     |                         | Results data is visible to the user after the vote. <br> Should be stored permanently! Usually red and wrote to the persistent storage source. <br> Array is modified every time user votes by incrementing the "votes" value and adding "percentage" element. |
-| theme       |       Object <br>More in the table below       |    ✖     | More in the table below | Theme allows you to customize the look and feel of given poll. Depending on poll type there are different options.                                                                                                                                             |
-| isVoted     |                    Boolean                     |    ✖     |          false          | When set to true, poll will show the results by default on mount and user won't be able to vote. Might be helpful when we want to keep showing results on every rerender after user has voted.                                                                 |
-| \*isVotedId |                     Number                     |    ✖     |                         | When an id is set, poll will indicate with the main theme color the result which the user has already voted on. To be used in conjunction with isVoted. **\*Only enabled for multiple**.                                                                       |
-| onVote      |                    Function                    |    ✖     |                         | Callback function running when user picks the answer. Returns the clicked item's and whole results modified object as arguments.                                                                                                                               |
+| Prop         |                  Type/Options                  | Required |         Default         | Description                                                                                                                                                                                                                                                    |
+| ------------ | :--------------------------------------------: | :------: | :---------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type         |             "multiple" or "binary"             |    ✔     |         binary          | Determines rendered poll type. Binary is recommended for yes-no questions where multiple is "one from many".                                                                                                                                                   |
+| question     |                     String                     |    ✖     |                         | Question visible on top of the poll. Invisible if not set.                                                                                                                                                                                                     |
+| results      | Array of objects with keys "text" and "votes". |    ✔     |                         | Results data is visible to the user after the vote. <br> Should be stored permanently! Usually red and wrote to the persistent storage source. <br> Array is modified every time user votes by incrementing the "votes" value and adding "percentage" element. |
+| theme        |       Object <br>More in the table below       |    ✖     | More in the table below | Theme allows you to customize the look and feel of given poll. Depending on poll type there are different options.                                                                                                                                             |
+| isVoted      |                    Boolean                     |    ✖     |          false          | When set to true, poll will show the results by default on mount and user won't be able to vote. Might be helpful when we want to keep showing results on every rerender after user has voted.                                                                 |
+| \*isVotedId  |                     Number                     |    ✖     |                         | When an id is set, poll will indicate with the main theme color the result which the user has already voted on. To be used in conjunction with isVoted. **\*Only enabled for multiple**.                                                                       |
+| onVote       |                    Function                    |    ✖     |                         | Callback function running when user picks the answer. Returns the clicked item's and whole results modified object as arguments.                                                                                                                               |
+| showPrecents |                    Boolean                     |    ✖     |          false          | When set to true, poll will show the results in percentage else will show 'x votes'                                                                                                                                                                            |
 
 ### Theme options
 

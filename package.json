@@ -1,6 +1,6 @@
 {
-  "name": "react-polls",
-  "version": "1.0.0",
+  "name": "@gb335/react-polls",
+  "version": "1.0.1",
   "description": "Customizable set of poll components for react.",
   "author": "giriraj",
   "license": "MIT",
