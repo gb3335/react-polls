@@ -41,6 +41,7 @@ const App = () => {
         theme={themeData}
         onVote={vote}
         isVoted={true}
+        showPrecents={false}
       />
       <LeafPoll
         type='multiple'
@@ -49,7 +50,7 @@ const App = () => {
         theme={themeData}
         onVote={vote}
         isVoted={false}
-        showPrecents={true}
+        showPrecents={false}
       />
       <h2>isVoted w/ id for colouring (only for 'multiple')</h2>
       <LeafPoll

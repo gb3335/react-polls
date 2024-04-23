@@ -11,6 +11,7 @@ interface BinaryPollProps {
   theme?: Theme
   isVoted?: boolean
   onVote?(item: Result, results: Result[]): void
+  showPrecents?: boolean
 }
 
 const BinaryPoll = ({
@@ -18,7 +19,8 @@ const BinaryPoll = ({
   results,
   theme,
   onVote,
-  isVoted
+  isVoted,
+  showPrecents
 }: BinaryPollProps) => {
   const [voted, setVoted] = useState<boolean>(false)
   const answersContainer = useRef<HTMLDivElement>(null)
@@ -67,7 +69,7 @@ const BinaryPoll = ({
             <p style={{ color: theme?.leftColor }}>{results[0].text}</p>
             {voted && (
               <span style={{ color: theme?.textColor }}>
-                {results[0].percentage}%
+                {showPrecents ? results[1].percentage + '%' : results[1].votes + ''}
               </span>
             )}
           </div>
@@ -89,7 +91,7 @@ const BinaryPoll = ({
             <p style={{ color: theme?.rightColor }}>{results[1].text}</p>
             {voted && (
               <span style={{ color: theme?.textColor }}>
-                {results[1].percentage}%
+                {showPrecents ? results[1].percentage + '%' : results[1].votes + ''}
               </span>
             )}
           </div>
